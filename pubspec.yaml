@@ -18,7 +18,9 @@ dependencies:
   flutter_colorpicker: 0.4.0
   enough_platform_widgets: #^0.2.0
     git:
-      url: https://github.com/Enough-Software/enough_platform_widgets.git
+      url: git://github.com/dab246/enough_platform_widgets.git
+      ref: fix_bug_cupertino_search
+#      url: https://github.com/Enough-Software/enough_platform_widgets.git
     # path: ../enough_platform_widgets
 
 dev_dependencies:
