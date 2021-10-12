@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import 'editor_api.dart';
@@ -31,6 +29,10 @@ class HtmlEditor extends StatefulWidget {
   /// List of custom text selection / context menu items.
   final List<TextSelectionMenuItem>? textSelectionMenuItems;
 
+  final bool supportZoom;
+  final bool disableVerticalScroll;
+  final bool disableHorizontalScroll;
+
   /// Creates a new HTML editor
   ///
   /// Set the [initialContent] to populate the editor with some existing text
@@ -49,6 +51,9 @@ class HtmlEditor extends StatefulWidget {
     this.splitBlockquotes = true,
     this.addDefaultSelectionMenuItems = true,
     this.textSelectionMenuItems,
+    this.supportZoom = false,
+    this.disableVerticalScroll = true,
+    this.disableHorizontalScroll = true,
   }) : super(key: key);
 
   @override
@@ -431,10 +436,10 @@ blockquote {
         crossPlatform: InAppWebViewOptions(
           useShouldOverrideUrlLoading: true,
           verticalScrollBarEnabled: false,
-          disableVerticalScroll: widget.adjustHeight,
-          disableHorizontalScroll: widget.adjustHeight,
+          disableVerticalScroll: widget.disableVerticalScroll,
+          disableHorizontalScroll: widget.disableHorizontalScroll,
           transparentBackground: isDark,
-          supportZoom: false,
+          supportZoom: widget.supportZoom,
         ),
         android: AndroidInAppWebViewOptions(
           useWideViewPort: false,

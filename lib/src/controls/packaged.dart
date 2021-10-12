@@ -38,6 +38,9 @@ class PackagedHtmlEditor extends StatefulWidget {
   /// Set `excludeDocumentLevelControls` to `true` in case document level controls such as the page background color should be excluded.
   final bool excludeDocumentLevelControls;
 
+  final bool supportZoom;
+  final bool disableVerticalScroll;
+  final bool disableHorizontalScroll;
   /// Creates a new packaged HTML editor
   ///
   /// Set the [initialContent] to populate the editor with some existing text
@@ -58,6 +61,9 @@ class PackagedHtmlEditor extends StatefulWidget {
     this.addDefaultSelectionMenuItems = true,
     this.textSelectionMenuItems,
     this.excludeDocumentLevelControls = false,
+    this.supportZoom = false,
+    this.disableVerticalScroll = false,
+    this.disableHorizontalScroll = false,
   }) : super(key: key);
 
   @override
@@ -101,6 +107,9 @@ class PackagedHtmlEditorState extends State<PackagedHtmlEditor> {
           adjustHeight: widget.adjustHeight,
           splitBlockquotes: widget.splitBlockquotes,
           textSelectionMenuItems: widget.textSelectionMenuItems,
+          supportZoom: widget.supportZoom,
+          disableVerticalScroll: widget.disableVerticalScroll,
+          disableHorizontalScroll: widget.disableHorizontalScroll,
           onCreated: _onCreated,
         ),
       ],
