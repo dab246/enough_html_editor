@@ -390,4 +390,8 @@ class HtmlEditorApi {
   /// Updates the currently selected link with the url [href] and [text].
   Future<void> editCurrentLink(String href, String text) =>
       _webViewController.runJavascript('''editLink('$href', '$text');''');
+
+  /// Insert signature
+  Future<void> insertSignature(String signature) =>
+      _webViewController.runJavascript('''insertSignature('$signature');''');
 }

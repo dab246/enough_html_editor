@@ -316,6 +316,24 @@ class HtmlEditorState extends State<HtmlEditor> {
       node.textContent = text;
     }
   }
+  
+  function insertSignature(signature) {
+    console.log('SIGNATURE: ' + signature);
+    var node = document.getElementById('tmail-signature');
+    console.log('SIGNATURE_HAS_EXISTS: ' + node);
+    if (!node) {
+      var nodeEditor = document.getElementById('editor');
+      console.log('NodeEditor: ' + nodeEditor.innerHTML);
+      var divSignature = document.createElement('div');
+      divSignature.setAttribute('id', 'tmail-signature');
+      divSignature.innerHTML = signature;
+      nodeEditor.appendChild(divSignature);
+      console.log('NEW_SIGNATURE: ' + nodeEditor.innerHTML);
+    } else {
+      node.innerHTML = signature;
+      console.log('UPDATE_SIGNATURE: ' + node.innerHTML);
+    }
+  }
 
   function selectNode() {
     let selection = document.getSelection();
