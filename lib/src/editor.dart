@@ -40,7 +40,7 @@ class HtmlEditor extends StatefulWidget {
 
   /// Specify the [minHeight] to set a different height
   /// than the default `100` pixel.
-  final int minHeight;
+  final double minHeight;
 
   /// Define the `onCreated(HtmlEditorApi)` callback to get notified
   /// when the API is ready.
@@ -412,6 +412,7 @@ blockquote {
   @override
   void initState() {
     super.initState();
+    _documentHeight = widget.minHeight;
     _api = HtmlEditorApi(this);
     _initialPageContent = generateHtmlDocument(widget.initialContent);
   }
