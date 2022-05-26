@@ -63,7 +63,7 @@ class PackagedHtmlEditor extends StatefulWidget {
 
   /// Specify the [minHeight] to set a different height than
   /// the default `100` pixel.
-  final int minHeight;
+  final double minHeight;
 
   /// Define the `onCreated(EditorApi)` callback to get notified when the API
   /// is ready and to retrieve the end result.
