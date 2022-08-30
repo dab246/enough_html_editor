@@ -408,4 +408,8 @@ class HtmlEditorApi {
   /// MoveCursorAtLastNode
   Future<void> moveCursorAtLastNode() => _webViewController
       .evaluateJavascript(source: 'moveCursorAtLastNode()');
+
+  /// Set focus editor
+  Future<void> focusEditor() => _webViewController
+      .evaluateJavascript(source: 'focusEditor();');
 }

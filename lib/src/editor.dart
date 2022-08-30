@@ -6,6 +6,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'editor_api.dart';
 import 'models.dart';
 import 'signature/email_signature_utils.dart';
+import 'utils/js_handler.dart';
 
 /// Slim HTML Editor with API
 class HtmlEditor extends StatefulWidget {
@@ -385,6 +386,8 @@ class HtmlEditorState extends State<HtmlEditor> {
   }
   
   ${EmailSigantureUtils.jsFunctionHandleSignature}
+  
+  ${JavaScriptsHandler.focusEditorJSFunction}
 </script>
 </head>
 <body onload="onLoaded();">
